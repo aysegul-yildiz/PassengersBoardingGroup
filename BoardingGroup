@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class BoardingGroup 
+{
+    public static void main(String[] args) 
+    {  
+        // Ayşegül Yıldız
+
+        // declare variables
+        Scanner  nameScanner = new Scanner (System.in);
+        String name;
+        String initial;
+
+        // ask for input
+        System.out.print( "Enter names of passengers: " );
+
+        //receive input
+        name = nameScanner.next();
+
+        // close scanner 
+        nameScanner.close();
+
+        // choose which one of the initials is bigger alphabeticly then assign it to initial string
+        if ( name.substring(0,1).compareTo( name.substring(name.indexOf("-")+1, name.indexOf("-")+2)) < 0 )
+        {
+            initial = name.substring(0,1);
+        }
+        else 
+        {
+            initial = name.substring(name.indexOf("-")+1, name.indexOf("-")+2);
+        }
+
+        // assign boarding groups according to the initial and print the result
+        if ( initial.equals("A") || initial.equals("B") || initial.equals("C") || initial.equals("D") || initial.equals("E") || initial.equals("F"))
+        {
+            System.out.println("BOARDING GROUP 1");
+        }
+        else if ( initial.equals("G") || initial.equals("H") || initial.equals("İ") || initial.equals("I") || initial.equals("J") || initial.equals("K") || initial.equals("L") || initial.equals("M") || initial.equals("N") )
+        {
+            System.out.println("BOARDING GROUP 2");
+        }
+        else if ( initial.equals("O") || initial.equals("Ö") || initial.equals("P") || initial.equals("R") || initial.equals("S") || initial.equals("T") )
+        {
+            System.out.println("BOARDING GROUP 3");
+        }
+        else if ( initial.equals("U") || initial.equals("Ü") || initial.equals("V") || initial.equals("Y") || initial.equals("Z") )
+        {
+            System.out.println("BOARDING GROUP 4");
+        }    
+    }    
+}
